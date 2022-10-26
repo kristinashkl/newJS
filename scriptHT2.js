@@ -14,6 +14,8 @@ console.log("firstName - " + "'" + obj1.firstName + "'");
 console.log("lastName - " + "'" + obj1.lastName + "'"); 
 console.log("age - " + "'" + obj1.age + "'"); 
 console.log("children - " + obj1.children);
-console.log("dates-birthday - " + "'" + obj1["dates"]["birthday"] + "'");
-console.log("dates-wedding - " + "'" + obj1["dates"]["wedding"] + "'");
-console.log("dates-graduationFromUniversity - " + "'" + obj1["dates"]["graduationFromUniversity"] + "'");
+
+let key = "dates";
+for ( let prop in obj1.dates) {
+    console.log(key  +  "-" + prop +  " - '" + obj1.dates[prop] + "'");
+}
