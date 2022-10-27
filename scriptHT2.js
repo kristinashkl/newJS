@@ -10,13 +10,19 @@ let obj1 = {
     },
 }
 
+
+
 for(let key in obj1) { 
-    if(typeof(obj1[key]) === "object"){
+    if (obj1[key] == null) {
+        obj1[key] = "null";
+    }
+    if(typeof(obj1[key]) === "object")
+    {
         for(let initial in obj1[key]) {
             console.log("dates-" + initial  + " - " + "'" + obj1[key][initial] + "'");
         }
     }
     else {
-        console.log(key + " - " + "'" + obj1[key] + "'");
+        console.log(key + " - " + obj1[key]);
     }
 }
