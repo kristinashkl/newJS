@@ -10,12 +10,13 @@ let obj1 = {
     },
 }
 
-console.log("firstName - " + "'" + obj1.firstName + "'"); 
-console.log("lastName - " + "'" + obj1.lastName + "'"); 
-console.log("age - " + "'" + obj1.age + "'"); 
-console.log("children - " + obj1.children);
-
-let key = "dates";
-for ( let prop in obj1.dates) {
-    console.log(key  +  "-" + prop +  " - '" + obj1.dates[prop] + "'");
+for(let key in obj1) { 
+    if(typeof(obj1[key]) === "object"){
+        for(let initial in obj1[key]) {
+            console.log("dates-" + initial  + " - " + "'" + obj1[key][initial] + "'");
+        }
+    }
+    else {
+        console.log(key + " - " + "'" + obj1[key] + "'");
+    }
 }
